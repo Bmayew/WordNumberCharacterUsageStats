@@ -1,0 +1,26 @@
+//**********************************************************************************************//
+// Braden Mayew                                                                                 //
+// COP 4530                                                                                     //
+// Project 6 - Word, Number, and Character Usage Statistics                                     //
+// -------------------------------------- analysis.txt ---------------------------------------- //
+//**********************************************************************************************//
+
+For Project 6 - "Word, Number, and Character Usage Statistics" the container I chose to implement, based on the desired task at hand, was a Map, this was the most effective candidate as opposed to a vector, linked list, hash table, or search tree. The most common algorithm is the "find" function, to search for the presence of a pair inside of the container, in order to determine if it already exists and to increment the total count. In the case of a vector, a generic find algorithm would take O(n) run time, same with a linked list. Although a hashtable's "find" function is typically the fastest, O(1), for searches, this is only when no collisions are present. If collisions are present, a hash table will require its sequence container implementation to search for the desired 'pair'. For the general case, a hash table will be implemented with a linked list, which will require O(n) search time - based on the number of elements in the list. This is not desireable with respect to the efficiency of a map or search tree. On the contrary, a map, by default, is implemented with a balanced (AVL or Red Black tree) which entails O(log(n)) search time. Furthermore, the map's usefullness for this assignment is also partial to the fact that it is, by default, a pair of items. This is extremely useful for this assignment because it is necessary to store the character, number, or word with a value = to the number of occurences.
+
+(1) Reading the input set:
+	(a) The time it takes to read in the input set of digits is 1.40735e+11 milliseconds.
+	(b) To read in the input of chars and create the words takes 4.32473e+06 milliseconds.
+
+(2) Storing the characters / words / numbers in your chosen containers, and setting their tracking values:
+	(a) Insertion into the map itself takes O(log(n)) due to the AVL or Red Black tree implementation. For the insertion into NumberStore and NumberPos, it takes 2.82579e+11 milliseconds.
+	(b) Insertion into the WordStore map takes O(log(n)), see above reasoning. For WordStore and WordPos map insertion it took 1.40735e+11 milliseconds.
+	(c) For the insertion into CharacterStore, it took 1.40735e+11 milliseconds.
+
+(3) Looking up the final tracking info on your character / word / number frequencies:
+	(a) To lookup/search for elements in a map, the AVL or Red Black tree implementation entails a O(log(n)) search time, because lookup is not based on the number of elements, but the height of the tree itself. This process took an allotted 1.40735e+11 milliseconds for each of the Maps.
+
+(4) Deciding on (and accessing for output) your "Top Ten" most frequent list for each case:
+	(a) For the process of determining the "Top Ten," the time complexity is O(n) because an iterator is created to compare every element of the map, in a linear manner.
+
+(5) Any other important algorithm/tasks you perform to complete the job:
+	(a) The erase algorithm found in map takes O(log(n)) asymptotic run time. This task was performed in 1.84467e+16 milliseconds for all of the deletion methods. These were implemented to clear the most recent element of map being printed.
